@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
+    <file url="file://$PROJECT_DIR$/Source/Aura.Target.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Source/Aura/Aura.Build.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Source/Aura/Aura.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Source/Aura/Aura.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Source/Aura/Private/AuraCharacterBase.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Source/Aura/Public/AuraCharacterBase.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Source/AuraEditor.Target.cs" charset="UTF-8" />
+  </component>
+</project>
