@@ -20,6 +20,9 @@ class AURA_API AAuraCharacter : public AAuraCharacterBase
 public:
 	AAuraCharacter();
 
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
+	
 private:
 	UPROPERTY(VisibleAnywhere);
 	TObjectPtr<UCameraComponent> CameraComponent;
@@ -27,4 +30,5 @@ private:
 	UPROPERTY(VisibleAnywhere);
 	TObjectPtr<USpringArmComponent> SpringArmComponent;
 
+	void InitAbilityActorInfo();
 };
