@@ -6,7 +6,13 @@
 #include "GameFramework/HUD.h"
 #include "AuraHud.generated.h"
 
+class UAuraAttributeSet;
+class UAuraAbilitySystemComponent;
+class AAuraPlayerState;
+struct FWidgetControllerParams;
+class UOverlayWidgetController;
 class UAuraUserWidget;
+
 /**
  * 
  */
@@ -19,11 +25,18 @@ public:
 	UPROPERTY()
 	TObjectPtr<UAuraUserWidget> OverlayWidget;
 
-protected:
-	virtual void BeginPlay() override;	
+	UOverlayWidgetController* GetOverlayWidgetController(const FWidgetControllerParams& WCParams);
+
+	void InitOverlay(APlayerController* PC, AAuraPlayerState* PS, UAuraAbilitySystemComponent* ASC,
+	                 UAuraAttributeSet* AS);
 
 private:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UAuraUserWidget> OverlayWidgetClass;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UOverlayWidgetController> OverlayWidgetControllerClass;
 	
+	UPROPERTY()
+	TObjectPtr<UOverlayWidgetController> OverlayWidgetController;
 };

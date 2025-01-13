@@ -65,8 +65,11 @@ void AAuraPlayerController::BeginPlay()
 		GetLocalPlayer()
 	);
 
-	check(Subsystem);
-	Subsystem->AddMappingContext(AuraContext, 0);
+	// This will not be set on the clients in multiplayer.
+	if (Subsystem)
+	{
+		Subsystem->AddMappingContext(AuraContext, 0);
+	}
 
 	bShowMouseCursor = true;
 	DefaultMouseCursor = EMouseCursor::Default;

@@ -8,7 +8,9 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Player/AuraPlayerController.h"
 #include "Player/AuraPlayerState.h"
+#include "UI/HUD/AuraHud.h"
 
 AAuraCharacter::AAuraCharacter()
 {
@@ -59,4 +61,11 @@ void AAuraCharacter::InitAbilityActorInfo()
 
 	AbilitySystemComponent = Cast<UAuraAbilitySystemComponent>(PlayerState->GetAbilitySystemComponent());
 	AttributeSet = PlayerState->GetAttributeSet();
+
+	if (AAuraPlayerController* PlayerController = Cast<AAuraPlayerController>(GetController()))
+	{
+		AAuraHud* HUD = Cast<AAuraHud>(PlayerController->GetHUD());
+
+		HUD->InitOverlay(PlayerController, PlayerState, AbilitySystemComponent, AttributeSet);
+	}
 }
