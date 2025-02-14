@@ -64,8 +64,9 @@ void AAuraCharacter::InitAbilityActorInfo()
 
 	if (AAuraPlayerController* PlayerController = Cast<AAuraPlayerController>(GetController()))
 	{
-		AAuraHud* HUD = Cast<AAuraHud>(PlayerController->GetHUD());
-
-		HUD->InitOverlay(PlayerController, PlayerState, AbilitySystemComponent, AttributeSet);
+		if (AAuraHud* HUD = Cast<AAuraHud>(PlayerController->GetHUD()))
+		{
+			HUD->InitOverlay(PlayerController, PlayerState, AbilitySystemComponent, AttributeSet);
+		}
 	}
 }
